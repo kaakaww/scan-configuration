@@ -4,7 +4,7 @@
 
 For more information about StackHawk see [https://www.stackhawk.com](https://www.stackhawk.com)
 
-To find more information about HawkScan check out our [Documentation](https://docs.stackhawk.com)
+To learn more about HawkScan and configuration options, check out our [Documentation](https://docs.stackhawk.com)
 
 
 ## Overview
@@ -13,9 +13,9 @@ StackHawk is a dynamic application security testing (DAST) tool built for develo
 
 ### Configuration Files
 * [Basic Configuration](Basic)
-* [REST API]()
-* [GraphQL API]()
-* [SOAP API]()
+* [REST API](REST)
+* [GraphQL API](GraphQL)
+* [SOAP API](SOAP)
 
 ### Authenticated Scanning
 * [Cookie Authentication]()
