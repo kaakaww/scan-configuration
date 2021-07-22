@@ -21,9 +21,9 @@ For more help configuring OpenAPI, see our [Documentation](https://docs.stackhaw
 
 ### Configuration Examples
 
-| Using a spec file                                                                                                   | Using a relative URL                                                                                        |
-| :------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------- |
-| app:<br />&nbsp;&nbsp;...<br />&nbsp;&nbsp;openApiConf:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;filePath: "openapi.yaml" | app:<br />&nbsp;&nbsp;...<br/>&nbsp;&nbsp;openApiConf:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;path: /api/docs   |
+| Using a spec file                                                                                             | Using a relative URL                                                                                  |
+| :------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------- |
+| app:<br />&nbsp;&nbsp;...<br />&nbsp;&nbsp;openApiConf:<br />&nbsp;&nbsp;&nbsp;&nbsp;filePath: "openapi.yaml" | app:<br />&nbsp;&nbsp;...<br/>&nbsp;&nbsp;openApiConf:<br />&nbsp;&nbsp;&nbsp;&nbsp;path: /api/docs   |
 
 ### Example Scan Configuration
 ```
