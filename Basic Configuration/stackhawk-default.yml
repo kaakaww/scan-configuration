@@ -1,0 +1,179 @@
+# Application specific configuration
+app:
+  # An applicationId obtained from the StackHawk Platform.
+  applicationId: xxxxx-XXXXXX-xxxx-XXXX-XXXxxxxXXX # (required)
+  # The environment for the applicationId defined in the StackHawk Platform.
+  env: Development # (required)
+  # The url of your application to scan
+  # Note: Must use port range 1024..65535 when scanning localhost
+  host: ${authority}://${host}:${port} # https://localhost:3000 (required)
+  # The risk level of the app
+  riskLevel: MEDIUM # (default)
+  # The type of data sensitivity the web app maintains
+  appDataType: PII # (default)
+  # Regex paths you want excluded entirely from the scan
+#  excludePaths: # (optional)
+#    # - "/assets/.*" (required)
+#    # - "/dont-scan-this-page"
+#  # The names of your session tokens aka: cookie names
+#  sessionTokens: # (optional)
+#    # - "_toy_app_session" (required)
+#  # The name of your anti csrf parameter
+#  antiCsrfParam: # authenticity_token (optional)
+#
+#  # Authentication configuration for scanning as a user.
+#  # Enabling will force the scanner to scan as an
+#  # authenticated user of your app.
+#  authentication: # (optional)
+#    # A regex to match against http responses to determine if the scan user is
+#    # still logged in to your app
+#    loggedInIndicator: # "\\QLog out\\E" (required)
+#    # A regex to match against http responses to determine if the scan user is
+#    # logged out of your app
+#    loggedOutIndicator: # "\\QLog in\\E" (required)
+#    # Username password based authentication method.
+#    usernamePassword: # (optional)
+#      # POST authentication credentials as application/x-www-form-urlencoded
+#      # Set type to JSON to POST as application/json.
+#      type: # FORM (required)
+#      # The route to POST credentials to authenticate as a user
+#      loginPath: # /login (required)
+#      # The route that serves the login form. The anti-csrf parameter
+#      # The username field name in your authentication payload.
+#      usernameField: # session[email] (required)
+#      # The password field name in your authentication payload.
+#      passwordField: # session[password] (required)
+#      # The username to authenticate as when scanning
+#      scanUsername: # ${SCAN_USERNAME} (required)
+#      # The password of the scanUsername
+#      scanPassword: # ${SCAN_PASSWORD} (required)
+#      # returned from a GET request will be extracted from the response.
+#      loginPagePath: # /login (optional)
+#      # Other request parameters that may be required by your log in payload
+#      otherParams: # (optional)
+#        # - name: utf8 (required)
+#        #   val: "&#x2713;" (required)
+#        # - name: "session[remember_me]"
+#        #   val: "0"
+#    # Maintain authorized session via cookie.
+#    cookieAuthorization: # (optional)
+#      # Names of cookies used to track a users session
+#      cookieNames: # (required)
+#        # - "_toy_app_session"
+#    # A path and criteria for asserting authentication is working correctly.
+#    # The path should be a protected route that can only be accesed
+#    # by an authenticated user. Before running a scan this path will be
+#    # requested to verify authenticated access is working correctly.
+#    testPath: # (optional)
+#      # Set to BODY to match against response body instead of HEADER.
+#      type: # HEADER (default)
+#      # Protected path to send GET/POST request validation.
+#      path: # /profile (required)
+#      # A regex to match against that will indicate a successful authorized
+#      # request. Configure fail criteria to match against a failed
+#      # authorized request. Example: fail:".*302.*Location.*/login.*"
+#      success: # ".*200.*" (required)
+#      # The request method for authentication validation.
+#      # GET/POST/PUT
+#      requestMethod: # GET (default)
+#      # The request body for POST/PUT authentication validation.
+#      requestBody: # foo=bar&hawk=foo  (optional)
+#      # Key/value pairs containing valid arbitrary headers e.g.
+#      requestHeaders:  # (optional)
+#        Content-Type: application/json
+#    # Externally supplied authorization token.
+#    # Use as an alternative to usernamePassword authentication
+#    external: # (optional)
+#       # A token type external credential.
+#       # Set to COOKIE to supply an externally sourced cookie
+#       type: # TOKEN (required)
+#       # The value of the token passed as an environment variable at runtime.
+#       # When type=COOKIE the value format should be <cookie-name>=<cookie-value>
+#       value: # ${AUTH_TOKEN} (required)
+#    # Describe how to extract your apps authorization token.
+#    # This should only be used with tokenAuthorization
+#    tokenExtraction:
+#       # The type of extraction to use. TOKEN_PATH is the path to the token in
+#       # the JSON payload returned from usernamePassword authentication.
+#       # Set to HEADER_NAME if your authorization token is returned as a response header.
+#       type: # TOKEN_PATH (required)
+#       # The path to the token or name of the header.
+#       value: # "auth.token" (required)
+#    # Use token based authorization instead of cookie based.
+#    # Tokens are passed on all requests to maintain authorized access
+#    # to your application
+#    tokenAuthorization: # (optional)
+#      # The way to pass the token on requests. Set to QUERY_PARAM
+#      # to pass your token as part of the query string instead of a header.
+#      type: # HEADER (required)
+#      # The name of the header or query param.
+#      value: # Authorization (required)
+#      # The token type which will be prepended to your authorization header.
+#      # ie: Authorization: Bearer <token>
+#      # Leave undefined if not applicable.
+#      tokenType: # Bearer <token> (optional)
+#  # Path to openapi 2 spec file or inline openapi 2 spec yaml
+#  # Note: default '/' == '{app.host}/openapi.json'
+#  api: # "/myopenapi.json" # (deprecated) Use app.openApiConf instead
+#  # Enable GraphQL support
+#  graphqlConf:
+#    # GraphQL introspection path [default: /graphql]
+#    schemaPath: /
+#    # Request method to use for queries [POST|GET]
+#    requestMethod: POST
+#    # Request method to use for queries [ALL|QUERY|MUTATION]
+#    operation: ALL
+#    # Set the max length of URIs when generating GET queries
+#    uriMaxLength: 4000
+#    # Provide the relative path to a JSON formatted schema file [default: None]
+#    # Note: also requires schemaPath to be set if not at the standard /graphql endpoint
+#    filePath: schema.json
+#    # Set the request parameters for introspection and enumeration
+#    introspection:
+#      # Number of requests to make at each interval
+#      requestsPerCycle: 20
+#      # Delay interval for request cycles
+#      requestDelay: 1000
+#  soapConf:
+#    # Host path to the SOAP WSDL, prefixed with a /
+#    path: /ws/descriptor.wsdl
+#    # Relative path to the SOAP WSDL schema definition file
+#    filePath: descriptor.xsd
+#
+## Parameters affecting scanner runtime.
+#hawk:
+#  # Web crawler / spider configuration
+#  spider:
+#    # Enable the base spider for discovering your app's routes
+#    base: true # (default)
+#    # Enable the ajax spider for discovering your single page app
+#    ajax: false # (default)
+#    # Maximum time for spider to discover routes in your app
+#    maxDurationMinutes: 2 # (default)
+#  # Maximum time to wait for the scanner to start up
+#  startupTimeoutMinutes: 5 # (default)
+#  # Minimum alert level for a scan fail result:
+#  # LOW|MED|HIGH
+#  failureThreshold: # high (optional)
+#
+## Parameters for addOns and custom scripts
+#hawkAddOn: # (optional)
+#  # Replacer addOn configuration
+#  replacer: # (optional)
+#    # List of rules for the Replacer addOn
+#    rules: # (optional)
+#      # Rules begin with _matchString_ key.
+#      # - matchString: 'Referer.*' # (required)
+#      #   replacement: 'Referer: banana.com' # (required)
+#      #   replaceOnly: true
+#      #   isRegex: true
+#      # - matchString: 'Content-Type'
+#      #   replaceOnly: false
+#      #   isRegex: false
+#      #   replacement: 'application/json'
+#  # Custom scripts configurtation
+#  scripts: # (optional)
+#    # Scripts begin with the _name_ key.
+#    # - name: # 'json-auth.js' (required)
+#    #   type: # 'authentication' (required)
+#    #   path: # ${PWD}/../zap_scripts (required)
