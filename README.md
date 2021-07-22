@@ -2,16 +2,25 @@
 
 # Scan Configuration
 
-HawkScan uses a YAML configuration file to supply operational settings to the scanner. To get started, copy the following into a file named stackhawk.yml in the root of your web app project directory. Replace URL_OF_YOUR_APP with the url of your locally running web app (example: http://localhost:3000) and the applicationId and env with the values from the StackHawk Platform.
+For more information about StackHawk see [https://www.stackhawk.com](https://www.stackhawk.com)
 
-#### By Application Type
-* [Default Configuration]()
+To find more information about HawkScan check out our [Documentation](https://docs.stackhawk.com)
+
+
+## Overview
+StackHawk is a dynamic application security testing (DAST) tool built for developers. The StackHawk scanner (HawkScan) utilizes a YAML configuration file to supply operational settings to the scanner. To get started clone this repo and place the `stackhawk.yml` file into the root of your project directory.
+
+
+### Configuration Files
+* [Basic Configuration](Basic)
 * [REST API]()
 * [GraphQL API]()
 * [SOAP API]()
 
-#### Authenticated Scanning
-
+### Authenticated Scanning
+* [Cookie Authentication]()
+* [Token Authentication]()
+* [External Token Authentication]()
 
 
 ### Running the scanner
