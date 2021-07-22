@@ -18,9 +18,9 @@ HawkScan will use the contents provided by the WSDL to improve the quality of th
 
 ### Configuration Examples
 
-| Using a spec file                                       | Using a relative URL                                                                            |
-| :------------------------------------------------------ | :---------------------------------------------------------------------------------------------- |
-| app:<br />&nbsp;&nbsp;...<br />soapConf: "soapAPI.wsdl" | app:<br />&nbsp;&nbsp;...<br/>soapConf: /soapAPI/v1?wsdl                                        |
+| Using a spec file                                                   | Using a relative URL                                                                                        |
+| :------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------- |
+| app:<br />&nbsp;&nbsp;...<br />&nbsp;&nbsp;soapConf: "soapAPI.wsdl" | app:<br />&nbsp;&nbsp;...<br/>&nbsp;&nbsp;soapConf: /soapAPI/v1?wsdl                                        |
 
 ### Example Scan Configuration
 ```
