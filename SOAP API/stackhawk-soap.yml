@@ -1,0 +1,9 @@
+app:
+  applicationId: xxxxx-XXXXXX-xxxx-XXXX-XXXxxxxXXX
+  env: Development
+  host: http://localhost:8080
+    soapConf:
+    path: /ws/features.wsdl # OR...
+#     filePath: features.xsd
+  autoPolicy: true
+  autoInputVectors: true
