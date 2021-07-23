@@ -12,6 +12,8 @@ StackHawk is pioneering application security testing for GraphQL APIs. The scann
 
 All [GraphQL configuration](https://docs.stackhawk.com/hawkscan/configuration#appgraphqlintrospection) settings can be viewed here.
 
+For more help configuring GraphQL, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/openapi-configuration.html).
+
 ### Example Scan Configuration
 ```
 app:
@@ -26,4 +28,24 @@ app:
     operation: ALL # (default)
 ```
 
-For more help configuring GraphQL, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/openapi-configuration.html).
+### Running the scanner
+
+#### Bash
+```bash
+docker run --rm -v $(pwd):/hawk:rw -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-graphql.yml
+```
+
+#### Windows CLI
+```bash
+docker run --rm -v %cd%:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-graphql.yml
+```
+
+#### PowerShell
+```PowerShell
+docker run --rm -v ${PWD}:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-graphql.yml
+```
+
+#### Linux
+```PowerShell
+docker run --rm -v $(pwd):/hawk:rw -network host -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-graphql.yml
+```

@@ -16,6 +16,9 @@ HawkScan will use the contents provided by the WSDL to improve the quality of th
 * Pre-seeding the sitemap using the routes defined in the WSDL. This can be used to complement any crawled routes or can be used instead of app spidering altogether.
 * Using defined inputs to operations in the spec to inform how to communicate with the web application and gather clues on how to better attack endpoints.
 
+For more help configuring SOAP API's, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/soap-configuration.html).
+
+
 ### Configuration Examples
 
 | Using a spec file                                                   | Using a relative URL                                                                                        |
@@ -32,4 +35,24 @@ app:
   api: /soapAPI/v1?wsdl]
 ```
 
-For more help configuring SOAP API's, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/soap-configuration.html).
+### Running the scanner
+
+#### Bash
+```bash
+docker run --rm -v $(pwd):/hawk:rw -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-soap.yml
+```
+
+#### Windows CLI
+```bash
+docker run --rm -v %cd%:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-soap.yml
+```
+
+#### PowerShell
+```PowerShell
+docker run --rm -v ${PWD}:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-soap.yml
+```
+
+#### Linux
+```PowerShell
+docker run --rm -v $(pwd):/hawk:rw -network host -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-soap.yml
+```
