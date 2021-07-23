@@ -18,19 +18,31 @@ To learn more about HawkScan and configuration options, check out our [Documenta
 * [SOAP API](SOAP)
 
 ### Authenticated Scanning
-* [Cookie Authentication]()
-* [Token Authentication]()
-* [External Token Authentication]()
+* [Cookie Authentication](Cookie_Auth)
+* [Token Authentication](Token_Auth)
+* [External Token Authentication](External_Token_Auth)
 
 
 ### Running the scanner
 
 #### Bash
 ```bash
-docker run --name hawkscan --network host -e API_KEY=${API_KEY} --rm -v $(pwd):/hawk:rw -it stackhawk/hawkscan:latest
+docker run --rm -v $(pwd):/hawk:rw -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -it stackhawk/hawkscan:latest
+```
+
+#### Windows CLI
+```bash
+docker run --rm -v %cd%:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -it stackhawk/hawkscan:latest
 ```
 
 #### PowerShell
 ```PowerShell
 docker run --rm -v ${PWD}:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -it stackhawk/hawkscan:latest
-`
+```
+
+#### Linux
+```PowerShell
+docker run --rm -v $(pwd):/hawk:rw -network host -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -it stackhawk/hawkscan:latest
+```
+
+For more help configuring Hawkscan, see our [Documentation](https://docs.stackhawk.com/hawkscan).
