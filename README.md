@@ -1,4 +1,4 @@
-<img width="800" alt="kaakaww-github-banner" src="https://user-images.githubusercontent.com/59268514/126686633-b8078990-16e2-4207-a97b-8d679b496274.png">
+<img width="100%" alt="kaakaww-github-banner" src="https://user-images.githubusercontent.com/59268514/126686633-b8078990-16e2-4207-a97b-8d679b496274.png">
 
 # Scan Configuration
 
@@ -18,10 +18,11 @@ To learn more about HawkScan and configuration options, check out our [Documenta
 * [SOAP API](SOAP)
 
 ### Authenticated Scanning
-* [Cookie Authentication](Cookie_Auth)
-* [Token Authentication](Token_Auth)
-* [External Token Authentication](External_Token_Auth)
+* [Cookie Authentication](Authentication/Cookie_Auth)
+* [Token Authentication](Authentication/Token_Auth)
+* [External Token Authentication](Authentication/External_Token_Auth)
 
+For more help configuring Hawkscan, see our [Documentation](https://docs.stackhawk.com/hawkscan).
 
 ### Running the scanner
 
@@ -46,6 +47,3 @@ docker run --rm -v ${PWD}:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxx
 ```PowerShell
 docker run --rm -v $(pwd):/hawk:rw -network host -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest
 ```
-
-
-For more help configuring Hawkscan, see our [Documentation](https://docs.stackhawk.com/hawkscan).

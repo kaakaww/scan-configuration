@@ -14,6 +14,7 @@ HawkScan uses a [YAML](https://yaml.org) configuration file to supply operationa
 * Udpate your `applicationId` and `env` with the values from the StackHawk Platform.
 * Update the `host` field with the url of your running web app (example: http://localhost:3000)
 
+For more help configuring Hawkscan, see our [Documentation](https://docs.stackhawk.com/hawkscan).
 
 ### Running the scanner
 
@@ -36,6 +37,3 @@ docker run --rm -v ${PWD}:/hawk -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxx
 ```PowerShell
 docker run --rm -v $(pwd):/hawk:rw -network host -e API_KEY=hawk.xxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxx -t stackhawk/hawkscan:latest stackhawk-basic.yml
 ```
-
-
-For more help configuring Hawkscan, see our [Documentation](https://docs.stackhawk.com/hawkscan).
