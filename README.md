@@ -8,7 +8,7 @@ To learn more about HawkScan and configuration options, check out our [Documenta
 
 
 ## Overview
-StackHawk is a dynamic application security testing (DAST) tool built for developers. The StackHawk scanner (HawkScan) utilizes a YAML configuration file to supply operational settings to the scanner. To get started clone this repo and place the `stackhawk.yml` file into the root of your project directory.
+[StackHawk](https://www.stackhawk.com) is a dynamic application security testing (DAST) tool built for developers. The StackHawk scanner (HawkScan) utilizes a [YAML](https://yaml.org) configuration file to supply operational settings to the scanner. To get started clone this repo and place the appropriate `stackhawk.yml` file into the root of your project directory.
 
 
 ### Configuration Files
