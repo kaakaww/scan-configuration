@@ -8,7 +8,7 @@ Most web applications will have specific pages that are only accessible to authe
 
 HawkScan can support authentication via `usernamePassword` or an `external supplied authorization token`. In addition, you can configure how HawkScan maintains authentication throughout the scan via a `cookieAuthorization` or `tokenAuthorization` configuration.
 
-A testPath configuration may also be provided to verify HawkScan authenticated its session correctly before scanning the application. The testPath configuration also provides requestMethod and requestBody options to support alternate HTTP request verbs, such as POST or PUT. The default action is GET.
+A `testPath` configuration may also be provided to verify HawkScan authenticated its session correctly before scanning the application. The `testPath` configuration also provides `requestMethod` and `requestBody` options to support alternate HTTP request verbs, such as `POST` or `PUT`. The default action is `GET`.
 
 
 For more help configuring Authentication, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html)
