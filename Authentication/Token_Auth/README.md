@@ -8,7 +8,7 @@ HawkScan supports this scenario by adding `usernamePassword`, `tokenExtraction`,
 
 Configuring `usernamePassword` for this scenario is similar to the first scenario , but instead the `usernamePassword.type=JSON` which will cause the credential and `otherParams` to be POSTed as `application/json` instead of `application/x-www-form-urlencoded`. Successful authentication will return a `JSON` payload containing the bearer token that will need to be passed with every request to an authenticated route.
 
-For more help configuring Token Authentidation, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#usernamepassword-authentication--bearer-token-authorization)
+For more help configuring Token Authentication, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#usernamepassword-authentication--bearer-token-authorization)
 
 #### Running the scanner with multiiple config files
 To better support advanced configurations you can provide multiple configuration files as an overlay to the base scan configuration `stackhawk.yml`. Subsequent configuration files will be merged on top of the prior, effectively replacing any duplicate setting values form the previous scan configuration file.

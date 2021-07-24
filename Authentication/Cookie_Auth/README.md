@@ -9,7 +9,7 @@ The POST request for sending the username and password expects a payload type of
 When a request with an invalid, or non-present cookie is sent the server will respond by redirecting the user to the /login page.
 
 
-For more help configuring Cookie Authentidation, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#usernamepassword-authentication--cookie-authorization)
+For more help configuring Cookie Authentication, see our [Documentation](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#usernamepassword-authentication--cookie-authorization)
 
 
 #### Running the scanner with multiiple config files
