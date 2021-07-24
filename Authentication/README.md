@@ -1,5 +1,7 @@
 <img width="100%" alt="kaakaww-github-banner" src="https://user-images.githubusercontent.com/59268514/126686633-b8078990-16e2-4207-a97b-8d679b496274.png">
 
+For more information about StackHawk see [https://www.stackhawk.com](https://www.stackhawk.com)
+
 # Authenticated Scanning with StackHawk
 
 Most web applications will have specific pages that are only accessible to authenticated users. To effectively scan for vulnerabilities it is important to test all paths, including the authenticated routes.
