@@ -1,1 +1,27 @@
 # Token Authentication
+app:
+  antiCsrfParam: csrfToken
+  authentication:
+    loggedInIndicator: ".*2[0-9][0-9].*OK.*|.*3[0-9][0-9].*"
+    loggedOutIndicator: ".*4[0-9][0-9].*Unauthorized.*"
+    usernamePassword:
+      type: FORM
+      loginPagePath: /login
+      loginPath: /login
+      usernameField: email
+      passwordField: password
+      scanUsername: ${SCAN_USERNAME}
+      scanPassword: ${SCAN_PASSWORD}
+      otherParams:
+        - name: rememberMe
+          val: "true"
+    tokenExtraction:
+      type: TOKEN_PATH
+      value: "authentication.token"
+    tokenAuthorization:
+      type: HEADER
+      value: Authorization
+      tokenType: Bearer
+    testPath:
+      path: /mysettings
+      success: ".*200.*"

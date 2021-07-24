@@ -1,1 +1,24 @@
-# Cookie Authentication
+#Cookie authentication
+app:
+  antiCsrfParam: csrfToken
+  authentication:
+    loggedInIndicator: "\\QLog out\\E"
+    loggedOutIndicator: "\\QLog in\\E"
+    usernamePassword:
+      type: FORM
+      loginPagePath: /login
+      loginPath: /login
+      usernameField: email
+      passwordField: password
+      scanUsername: ${SCAN_USERNAME}
+      scanPassword: ${SCAN_PASSWORD}
+      otherParams:
+        - name: rememberMe
+          val: "true"
+    cookieAuthorization:
+      cookieNames:
+        - sessionid
+    testPath:
+      path: /mysettings
+      success: ".*200.*"
+{"mode":"full","isActive":false}
