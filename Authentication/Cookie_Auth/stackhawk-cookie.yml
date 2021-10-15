@@ -21,4 +21,4 @@ app:
     testPath:
       path: /mysettings
       success: ".*200.*"
-{"mode":"full","isActive":false}
+
